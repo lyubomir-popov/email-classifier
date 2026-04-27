@@ -1,0 +1,8 @@
+# Copy this file to allowlist.txt for local-only keep rules.
+# allowlist.txt is gitignored.
+
+# Exact email
+friend@example.com
+
+# Whole domain
+example.org

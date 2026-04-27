@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Conveyancing remortgage case update => KEEP",
+    "record": {
+      "from_header": "Openwork Conveyancing <updates@openworkconveyancing.com>",
+      "subject": "Openwork Conveyancing - We've a case update for you",
+      "date": "Mon, 23 Feb 2026 09:00:00 +0000",
+      "message_id": "<openwork-1@example>",
+      "list_unsubscribe": "",
+      "snippet": "We're helping with your Remortgage of 45 Burns Avenue, Sidcup, DA15 9HT. Instruction reference EC4338757G and case reference EC4338757G/01/ORI. Milestone complete: we have verified your identity."
+    },
+    "is_promotions_scan": true,
+    "llm": {"action": "DELETE", "confidence": 0.99, "reason": "stub"},
+    "expected_action": "KEEP",
+    "expected_rule_contains": "FORCE_KEEP_TRANSACTIONAL_CASE"
+  },
+  {
+    "name": "Eventbrite promo in Promotions => DELETE",
+    "record": {
+      "from_header": "Eventbrite <noreply@eventbrite.com>",
+      "subject": "Top stories and events for your week",
+      "date": "Mon, 23 Feb 2026 09:00:00 +0000",
+      "message_id": "<eventbrite-1@example>",
+      "list_unsubscribe": "<mailto:unsubscribe@eventbrite.com>",
+      "snippet": "Your daily roundup newsletter. Unsubscribe at any time."
+    },
+    "is_promotions_scan": true,
+    "llm": {"action": "KEEP", "confidence": 0.99, "reason": "stub"},
+    "expected_action": "DELETE",
+    "expected_rule_contains": "FORCE_DELETE"
+  },
+  {
+    "name": "Guardian daily newsletter => UNSUBSCRIBE",
+    "record": {
+      "from_header": "The Guardian <daily@mail.theguardian.com>",
+      "subject": "Morning briefing: top stories",
+      "date": "Mon, 23 Feb 2026 09:00:00 +0000",
+      "message_id": "<guardian-1@example>",
+      "list_unsubscribe": "<https://theguardian.com/unsubscribe>",
+      "snippet": "Your daily digest and newsletter edition."
+    },
+    "is_promotions_scan": false,
+    "llm": {"action": "KEEP", "confidence": 0.99, "reason": "stub"},
+    "expected_action": "UNSUBSCRIBE",
+    "expected_rule_contains": "FORCE_UNSUBSCRIBE"
+  },
+  {
+    "name": "Password reset => KEEP",
+    "record": {
+      "from_header": "Security <no-reply@service.com>",
+      "subject": "Reset your password",
+      "date": "Mon, 23 Feb 2026 09:00:00 +0000",
+      "message_id": "<security-1@example>",
+      "list_unsubscribe": "",
+      "snippet": "We received a password reset request. Verification code: 443210"
+    },
+    "is_promotions_scan": false,
+    "llm": {"action": "DELETE", "confidence": 0.99, "reason": "stub"},
+    "expected_action": "KEEP",
+    "expected_rule_contains": "FORCE_KEEP_SIGNAL"
+  },
+  {
+    "name": "Amazon delivered => DELETE",
+    "record": {
+      "from_header": "Amazon <shipment-tracking@amazon.com>",
+      "subject": "Your package was delivered today",
+      "date": "Mon, 23 Feb 2026 09:00:00 +0000",
+      "message_id": "<amazon-delivered@example>",
+      "list_unsubscribe": "",
+      "snippet": "Your package was delivered at 2:00 PM."
+    },
+    "is_promotions_scan": false,
+    "llm": {"action": "KEEP", "confidence": 0.99, "reason": "stub"},
+    "expected_action": "DELETE",
+    "expected_rule_contains": "FORCE_DELETE_DELIVERY_NOTIFICATION"
+  },
+  {
+    "name": "Amazon invoice/receipt => KEEP",
+    "record": {
+      "from_header": "Amazon <auto-confirm@amazon.com>",
+      "subject": "Your Amazon invoice and payment receipt",
+      "date": "Mon, 23 Feb 2026 09:00:00 +0000",
+      "message_id": "<amazon-receipt@example>",
+      "list_unsubscribe": "",
+      "snippet": "Invoice attached. Payment receipt for order 123-1234567-1234567"
+    },
+    "is_promotions_scan": false,
+    "llm": {"action": "DELETE", "confidence": 0.99, "reason": "stub"},
+    "expected_action": "KEEP",
+    "expected_rule_contains": "FORCE_KEEP_SIGNAL"
+  },
+  {
+    "name": "Bank statement => KEEP",
+    "record": {
+      "from_header": "My Bank <alerts@bank.com>",
+      "subject": "Your monthly statement is ready",
+      "date": "Mon, 23 Feb 2026 09:00:00 +0000",
+      "message_id": "<bank-statement@example>",
+      "list_unsubscribe": "",
+      "snippet": "View your bank statement securely."
+    },
+    "is_promotions_scan": false,
+    "llm": {"action": "DELETE", "confidence": 0.99, "reason": "stub"},
+    "expected_action": "KEEP",
+    "expected_rule_contains": "FORCE_KEEP_SIGNAL"
+  },
+  {
+    "name": "Unknown ambiguous => REVIEW",
+    "record": {
+      "from_header": "Notifications <news@random-updates.net>",
+      "subject": "Checking in",
+      "date": "Mon, 23 Feb 2026 09:00:00 +0000",
+      "message_id": "<unknown-1@example>",
+      "list_unsubscribe": "",
+      "snippet": "Hello, just a short message with little context and no clear intent."
+    },
+    "is_promotions_scan": false,
+    "llm": {"action": "KEEP", "confidence": 0.51, "reason": "uncertain"},
+    "expected_action": "REVIEW",
+    "expected_rule_contains": "low_confidence"
+  }
+]

@@ -20,8 +20,6 @@ Ignored local files include:
 - `.env.local` for credentials and API keys
 - `allowlist.txt` for personal keep rules
 - `audit_*.csv` and related audit exports
-- `coda_comments.json`
-- `.playwright/`
 - Python cache and virtual environment folders
 
 Tracked template files include:
@@ -188,40 +186,6 @@ Run the fixture-based policy test:
 
 ```bash
 python -m unittest tests/test_policy_fixtures.py
-```
-
-## Coda Comment Extraction
-
-Install browser automation support:
-
-```bash
-pip install -r requirements.txt
-python -m playwright install
-```
-
-Extract comments from a Coda canvas page:
-
-```bash
-python scripts/pull_coda_comments.py --url "https://coda.io/d/your-doc/your-page"
-```
-
-This writes `coda_comments.json` locally in this shape:
-
-```json
-[
-  {
-    "blockText": "...",
-    "comment": "...",
-    "author": "...",
-    "timestamp": "..."
-  }
-]
-```
-
-Review and apply comment-driven markdown edits one by one:
-
-```bash
-python scripts/review_coda_comments.py --markdown "Typeface Page Draft.md" --comments coda_comments.json
 ```
 
 ## Publishing Checklist

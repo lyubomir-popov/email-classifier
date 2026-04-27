@@ -5,7 +5,6 @@
 
 # Personal data and local config
 allowlist.txt
-coda_comments.json
 *.md.bak
 
 # Generated audit logs and exports
@@ -14,8 +13,7 @@ audit_live_*.csv
 audit_promotions_*.csv
 audit_verify_*.csv
 
-# Playwright and Python caches
-.playwright/
+# Python caches
 __pycache__/
 *.py[cod]
 .pytest_cache/

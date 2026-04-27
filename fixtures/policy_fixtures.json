@@ -2,12 +2,12 @@
   {
     "name": "Conveyancing remortgage case update => KEEP",
     "record": {
-      "from_header": "Openwork Conveyancing <updates@openworkconveyancing.com>",
-      "subject": "Openwork Conveyancing - We've a case update for you",
+      "from_header": "Example Conveyancing <updates@example.test>",
+      "subject": "Example Conveyancing - We've a case update for you",
       "date": "Mon, 23 Feb 2026 09:00:00 +0000",
-      "message_id": "<openwork-1@example>",
+      "message_id": "<conveyancing-fixture-1@example>",
       "list_unsubscribe": "",
-      "snippet": "We're helping with your Remortgage of 45 Burns Avenue, Sidcup, DA15 9HT. Instruction reference EC4338757G and case reference EC4338757G/01/ORI. Milestone complete: we have verified your identity."
+      "snippet": "We're helping with your Remortgage of 101 Example Road, Testford, AB12 3CD. Instruction reference CASE12345X and case reference CASE12345X/01/ABC. Milestone complete: we have verified your identity."
     },
     "is_promotions_scan": true,
     "llm": {"action": "DELETE", "confidence": 0.99, "reason": "stub"},
